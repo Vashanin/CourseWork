@@ -1,0 +1,173 @@
+<section id = "personal_page">
+
+	<h1> Personal page </h1>
+	
+	<hr>
+
+	<img id="avatar" width="200px" height="200px" src="/images/actor.png" style="display: inline-block;"/>
+	
+	<?php 
+		function get_comments_from($document_with_comments){
+			$file = fopen($document_with_comments, 'r');
+
+			if($file){
+				$all_comments = array();
+
+				while($line = fgets($file)){
+					if($line[0] === '#'){
+						$one_comment = array();
+
+						$content = explode('#', $line);
+						$header = $content[1];
+						$one_comment[] = $header;
+					} else if($line[0]!=='-' && $line[0]!==' ') {
+						$content = explode('|', $line);
+						$one_comment[] = $content[1];
+					}
+					if($line[0] === ' '){
+						$all_comments[] = $one_comment;
+					}
+				}	
+			}
+
+			return $all_comments;
+		}
+
+		function get_user_info_from($path_to_file){
+			$file_with_database = fopen($path_to_file, 'r');
+
+			if($file_with_database){
+				while($line = fgets($file_with_database)){
+						
+					if($line[0] === '#'){
+
+						$counter = 0;
+						$user_email = explode('#', $line);
+
+						$all_users[$user_email[1]] = array();
+						$user = array(); 
+					}
+						
+					if($line[0] !== '#' && $line[0]!==' '){
+
+						if($counter < 11){
+							$user_info = explode(' ', $line);
+
+							$user[] = $user_info[1];
+						}
+
+						if($counter === 10){
+							$all_users[$user_email[1]] = $user;
+						}
+
+						$counter++;
+					}
+				}
+			}
+
+			fclose($file_with_database);
+			return $all_users;
+		}
+
+		function get_banned_users($path_to_file){
+			$file_with_banned = fopen($path_to_file, 'r');
+			
+			if($file_with_banned){
+				$line = fgets($file_with_banned);
+				$banned = explode(' ', $line);
+			}
+
+			return $banned;
+		}
+
+
+		$all_users = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");			
+		$user_info = $all_users[$_SESSION['current_user']];
+
+		echo '<div id="user_content">';
+		echo '<h2>'.$user_info[3].' '.$user_info[4].'</h2>';
+		echo '<p> Email: '.$user_info[1].'</p>';
+		echo '<p> Gender: '.$user_info[6].'</p>';
+		echo '<p> Birth date: '.$user_info[5].'</p>';
+		echo '<p> Phone: '.$user_info[8].'</p>';
+		echo '<p> Skype: '.$user_info[9].'</p>';
+		echo '<p> Viber: '.$user_info[10].'</p>';
+		echo '</div>';
+
+
+		if($_SESSION['current_user'] == 'Admin'){
+
+			$all_comments = get_comments_from("z:/home/localhost/www/lab7/txt/user_comments.txt");
+			$all_users = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");			
+			$banned = get_banned_users("z:/home/localhost/www/lab7/txt/banned.txt");
+			$current_user = $_SESSION['current_user'];
+
+			echo '<h2 id="header"> List of users </h2>';
+			echo '<table id="users_table" border="1px solid #bbb" cellspacing="0">';
+			echo '<tr>';
+			echo '<th>#</th><th>Email</th><th>Password</th><th>Name</th><th>Surame</th><th>Birth</th><th>Gender</th><th>Online status</th><th>Banned status</th>';
+			echo '</tr>';
+
+			foreach ($all_users as $key => $value) {
+				echo '<tr>';
+				echo '<td>'.$value[0].'</td>';
+				echo '<td>'.$value[1].'</td><td>'.$value[2].'</td><td>'.$value[3].'</td><td>'.$value[4].'</td><td>'.$value[5].'</td><td>'.$value[6].'</td>';
+				
+				if($current_user == $key)
+					echo '<td> Online </td>';
+				else
+					echo '<td> Offline </td>';
+				
+				if(in_array($key, $banned)){
+					echo '<td> <form method="POST" onsubmit=user_unban("'.$key.'");>';
+					echo '<button name="unban" value="'.$key.'"> Unban this user </button>';
+					echo '</form>';
+				} else {
+					echo '<td> <form method="POST" onsubmit=user_ban("'.$key.'");>';
+					echo '<button name="ban" value="'.$key.'"> Ban this user </button>';
+					echo '</form>';
+				}
+				echo '</tr>';
+			}
+
+			echo '</table>';
+
+			echo "<h2> List of merged comments </h2>";
+			echo '<table id="comments_table" border="1px solid #bbb" cellspacing="0">';
+			echo '<tr> <th> Article </th> <th> User </th> <th> Comment </th> <th> Date </th> <th> Actions </th> </tr>';
+			
+			foreach ($all_comments as $item => $comment) {
+				if($comment[4] === 'merged'){
+					echo '<tr>';
+					echo '<td>'.$comment[0].'</td><td>'.$comment[1].'</td><td>'.$comment[2].'</td><td>'.$comment[3].'</td>'; 
+					echo '<td> <form method="POST" action="/lab7/php/submit_comments.php">';
+					echo '<button class="comment_button" name="delete_'.$item.'" value="true"> Delete </button>';
+					echo '</form> </td></tr>';
+				}
+			}
+			
+			echo '</table>';
+
+			echo '<h2> List of moderating comments </h2>';
+			echo '<table id="comments_table" border="1px solid #bbb" cellspacing="0">';
+			echo '<tr> <th> Article </th> <th> User </th> <th> Comment </th> <th> Date </th> <th> Actions </th> </tr>';
+			
+			foreach ($all_comments as $item => $comment) {
+				if($comment[4] === 'moderating'){
+					echo '<tr>';
+
+					echo '<td>'.$comment[0].'</td><td>'.$comment[1].'</td><td>'.$comment[2].'</td><td>'.$comment[3].'</td>';
+					
+					echo '<td> <form method="POST" action="/lab7/php/submit_comments.php">';
+					echo '<button class="comment_button" name="delete_'.$item.'" value="true"> Delete </button>';
+					echo '<button class="comment_button" name="merge_'.$item.'" value="true"> Merge </button>';
+					echo '</form> </td>';
+					
+					echo '</tr>';
+				}
+			}
+			
+			echo '</table>';
+		}
+	?>
+</section>

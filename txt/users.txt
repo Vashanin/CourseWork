@@ -1,0 +1,90 @@
+#Admin#
+id 1 
+email Admin 
+password imgod 
+name Vlad 
+surname Shanin 
+birth 1998-05-07 
+gender male 
+photo none 
+phone 0953812634 
+skype vo.shanin 
+viber 0953812634 
+ 
+#rocwind@ukr.net# 
+id 2 
+email rocwind@ukr.net 
+password imbyth10 
+name Alex 
+surname Shanin 
+birth 1974-09-27 
+gender male 
+photo none 
+phone 0509057892 
+skype alrocwind 
+viber 0509057892 
+ 
+#user@ukr.net#
+id 3 
+email user@ukr.net 
+password user 
+name Alex 
+surname Alexion 
+birth 0123-03-12 
+gender male 
+photo 
+phone 0932848372 
+skype alex-x 
+viber 0948128321 
+ 
+#timonov@gmail.com#
+id 4 
+email timonov@gmail.com 
+password lovematan 
+name Alex 
+surname Timonov 
+birth 1998-10-20 
+gender male 
+photo 
+phone 0504435473 
+skype Lesha Timonov 
+viber 0504435473 
+ 
+#vasya@gmail.com#
+id 5 
+email vasya@gmail.com 
+password imuser 
+name Vasya 
+surname Vasechkin 
+birth 2001-04-09 
+gender male 
+photo 
+phone 0942313213 
+skype vasyaaaaaa 
+viber 0941231254 
+ 
+#anarchy@dot.net#
+id 6 
+email anarchy@dot.net 
+password aaaa 
+name Viktor 
+surname Nerugin 
+birth 2102-09-04 
+gender male 
+photo 
+phone 213123123132 
+skype 123123132132 
+viber 234124124124 
+ 
+#vashanin7@gmail.com#
+id 7 
+email vashanin7@gmail.com 
+password 1234 
+name dakdsjf; 
+surname s;adlfkj 
+birth 0123-03-12 
+gender male 
+photo 
+phone 12313 
+skype 21313 
+viber 123 

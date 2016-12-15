@@ -1,0 +1,27 @@
+import re											# для роботи з регулярними виразами
+import os											# для роботи з папками та системою
+
+def change_words_in(from_this, to_this, path):
+	with open(path, "r") as html_code:
+		content = html_code.read()								# відкриваєш відповідний файл та записуєш його вміст в змінну content
+		
+	result = re.sub(r'%s' % str(from_this), to_this, content)	# за допомогою регулярних виразів, змінюєш кожне входження
+
+	with open(path, "w") as html_code:							# записуєш змінений контент назад
+		html_code.write(result)
+
+path = "Z:\\home\\localhost\\www\\Orlov\\lab6\\php\\"
+
+mode = 0
+from_ = 'admin.html'
+to_ = 'admin.php'
+
+if (mode == 0):
+	os.chdir(path)
+	for i in os.listdir(path="."):	
+		print(os.getcwd() + "\\" + i)								# перебір кожного файлу присутнього в директорії та його зміна
+		change_words_in(from_, to_, os.getcwd() + "\\" + i)
+
+if (mode == 1):
+	print(path)
+	change_words_in(from_, to_, path)

@@ -1,0 +1,587 @@
+body#main{
+	margin: 0;
+	padding: 0;
+	font-family: "Century Gothic", serif;
+
+	background: rgb(236, 234, 230) url("/images/my_background.png") repeat left top;
+	position: relative;
+}
+/* =============== main ===============*/
+
+#text_column{
+	display: inline-block;
+	
+	height: auto;
+	min-height: 500px;
+	width: 61%;
+
+	margin: 30px 35px 30px 95px;
+}
+
+img.picture {
+	width: 100%;
+}
+
+span.add_comment_icon {
+	text-align: right;
+	padding: 5px 10px;
+	background-color: #eee;
+	font-size: 0.8rem;
+}
+
+
+span.add_comment_icon:hover {
+	box-shadow: 0 0 10px #aaa;
+	cursor: pointer;
+}
+
+span.add_comment_icon:active {
+	box-shadow: 0 0 10px #eee;
+	cursor: pointer;
+}
+
+#text_column>div{
+	height: auto;
+
+	position: block;
+	box-shadow: 0 0 10px #ccc;
+	border: 1px solid #ddd;
+
+	width: 100%;
+	min-height: 100px;
+	height: auto;
+
+	margin-bottom: 40px;
+	padding-bottom: 75px;
+	background-color: #fff;
+}
+
+#text_column div>span>p {
+	margin: 5px 30px;
+	font-size: 0.9rem;
+}
+
+#text_column div>h1 {
+	font-weight: normal;
+	text-align: center;
+}
+
+#text_column div a {
+	text-decoration: none;
+	margin: 0 30px;
+	color: rgb(68,68,68);
+	border: 1px solid rgb(120, 120, 120);
+	padding: 5px;
+	border-radius: 0 5px 0 5px;
+}
+
+#text_column hr {
+	width: 90%;
+	margin: 20px auto;
+}
+
+#text_column div h4 {
+	font-weight: normal;
+	margin-left: 30px;
+}
+ 
+
+#text_column div>h3 {
+	font-weight: normal;
+	margin: 20px 0 10px 40px;
+}
+
+#aside1{
+	display: inline-block;
+	box-shadow: 0 0 5px #ccc;
+	background-color: #fff;
+
+	height: auto;
+	min-height: 500px;
+	width: 260px;
+	padding: 20px;
+
+	float: right;
+
+	margin: 30px 85px 30px 0px; 
+}
+
+/* ========= user comments ==========*/
+
+.user_comment form{
+	width: 80%;
+	height: auto;
+	padding: 30px;
+	margin: 20px auto;
+	border: 1px solid #eee;
+	box-shadow: 0 0 10px #ddd;
+}
+
+.user_comment input[type="submit"]{
+	height: 40px;
+	width: 100px;
+	font-family: 'Century Gothic';
+}
+
+.user_comment textarea {
+	width: 650px;
+	height: 150px;
+	margin: 20px auto;
+	font-size: 0.9rem;
+	margin-bottom: 0;
+	background-color: rbg(240, 240, 240);
+	font-family: 'Century Gothic';
+}
+
+.user_comment p {
+	font-size: 1.2rem;
+	margin-left: 50px;
+}
+
+div.comment_output {
+	width: 80%;
+	height: auto;
+	margin: 20px auto;
+	border: 1px solid #eee;
+	box-shadow: 0 0 10px #ddd;
+}
+
+.comment_output h1 {
+	font-weight: normal;
+	text-align: left;
+}
+
+.comment_output p {
+	margin: 20px 40px;
+}
+
+.user_comment>form>span {
+	color: rgb(68,68,86);
+	font-size: 0.9rem;
+	background-color: rgb(247,247,247);
+}
+
+/* ============== header ============== */
+header {
+	position: fixed;
+	width: 100%;
+	background: rgba(250, 250, 250, 0.9);
+	padding: 7px 7px 10px 15px;
+	color: rgb(68, 68, 68);
+	top: 0px;
+	box-shadow: 0 0 10px #bbb;
+	z-index: 100;
+}
+
+
+header>span {
+	margin-right: 20px;
+}
+
+#article {
+	margin-left: 50px;
+}
+
+#article>span {
+	margin-left: 20px;
+	font-size: 1.5rem;
+	position: relative;
+	bottom: 13px;
+}
+
+#article>img {
+	
+	margin-bottom: 0px;
+	/*
+	border: 1px solid rgb(160,160,160);
+	border-radius: 100%;
+	*/
+}
+
+#menu_icon>span {
+	font-size: 1rem;
+	position: relative;
+	bottom: 3px;
+}
+
+
+#menu_icon {
+	position: relative;
+	top: 3px;
+	left: 55%; 
+	cursor: pointer;
+}
+
+/* =============== menu =============== */
+
+#menu {
+	background: #202024;
+	top: 0px;
+	left: -240px;
+	height: 100%;
+	position: fixed;
+	width: 240px;
+	box-shadow: 1px 1px 10px #fff;
+}
+
+#icon-close {
+	cursor: pointer;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+#menu a {
+	color: rgb(200, 200, 200);
+	list-style-type: none;
+	text-decoration: none;
+}
+
+#menu li {
+	margin-top: 10px;
+}
+
+#menu span{
+	font-size: 0.8rem;
+	color: #606060;
+}
+
+#menu li:active {
+	text-shadow: 1px 1px 10px #fff;
+}
+
+/* =============== footer =============== */
+
+footer {
+	position: relative;
+	background: rgb(45,45,45);
+	height: 100px;
+	padding: 5px;
+	margin-top: 40px;
+	font-family: "Century Gothic", serif;
+	font-size: 0.9rem;
+}
+
+footer span{
+	margin-left: 200px;
+	position: relative;
+	bottom: 5px;
+	color: #ccc;
+}
+
+footer img{
+	position: relative;
+	top: 7px;
+	left: 500px;
+	border-radius: 20px;
+	border: 2px solid #ccc;
+}
+
+footer>span>font {
+	color: #fff;
+}
+
+footer img:hover{
+	box-shadow: 0 0 10px #fff;
+}
+
+/* ========= logining ========= */
+
+body#logining {
+	background-color: rgb(241, 241, 241);
+}
+
+#logining section {
+	width: 320px;
+	height: 400px;
+	margin: 100px auto;
+}
+
+#logining a>img{
+	border-radius: 100%;
+	margin-left: 100px;
+	margin-bottom: 15px;
+	/*
+	border: 2px solid #ccc;
+	box-shadow: 0 0 10px #fff;
+	*/
+}
+
+#logining #login_form {
+	width: 320px;
+	height: 260px;
+	padding-top: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 5px #ddd;
+
+	color: rgb(68, 68, 68);
+}
+
+#user_email, #user_password {
+	width: 270px;
+	height: 35px;
+	border: 1px solid #ddd;
+	font-size: 16pt;
+	font-family: "Century Gothic";
+}
+
+#logining p{
+	font-size: 1rem;
+	color: rgb(140, 140, 140);
+	margin-left: 25px;
+	margin-top: 20px;
+}
+
+#login_form .submit_button{
+	background-color: rgb(0,133,186);
+	width: 65px;
+	height: 30px;
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid rgb(0,130,180);
+	margin-left: 95px;
+}
+
+#login_form span{
+	margin-left: 25px;
+	font-size: 0.9rem;
+	color: rgb(140, 140, 140);
+	margin-top: 25px;
+}
+
+#logining input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+	border-radius: 0;
+	position: relative;
+	top: 2px;
+}
+
+
+#logining a>p:hover{
+	text-shadow: 0 0 10px #aaa;
+}
+
+#logining input.submit_button:hover{
+	box-shadow: 0 0 5px rgb(0,133,186);
+}
+
+#logining input.text_there:active{
+	box-shadow: 0 0 10px rgb(0,133,186);
+}
+
+#logining #back{
+	text-decoration: none;
+	color: rgb(150, 150, 150);
+	position: relative;
+	left: 30px;
+	top: 20px;
+}
+
+/* ========= map ========= */
+
+#map {
+	display: inline-block;
+	box-shadow: 0 0 5px #ccc;
+	background-color: #fff;
+		
+	height: auto;
+	min-height: 500px;
+	width: 61%;
+
+	margin: 120px 35px 30px 95px;;
+
+}
+
+#aside {
+	display: inline-block;
+	box-shadow: 0 0 5px #ccc;
+	background-color: #fff;
+	
+	height: auto;
+	min-height: 500px;
+	width: 300px;
+
+	float: right;
+
+	margin: 120px 85px 30px 0px; 
+}
+
+#map h1 {
+	text-align: center;
+	font-weight: normal;
+	color: rgb(68, 68, 68);
+	margin-bottom: 40px;
+}
+
+
+/* ===== registration ===== */
+
+#signin_form {
+	height: 800px;
+	padding-top: 50px;
+	font-family: "Century Gothic", serif;
+}
+
+.text_there {
+	width: 300px;
+	height: 20px;
+}
+
+#signin_form form{
+	width: 650px;
+	height: 450px;
+	margin-top: 70px;
+	margin-left: 320px;
+}
+
+
+#signin_form .submit_button {
+	margin: 20px 20px 40px 240px;
+	border-radius: 100%;
+	border: 0px;
+}
+
+#signin_form li {
+	font-family: "Century Gothic", serif;
+	margin: 2px;
+	padding: 5px 15px 5px 25px;
+	border: 1px solid white;
+	text-decoration: none;
+	list-style-type: none;
+	background: rgba(248, 248, 248, 0.6);
+	box-shadow: 0 0 10px rgb(150, 150, 150);
+	font-size: 0.9rem;
+}
+
+#signin_form input, option, select{
+	font-family: "Century Gothic";
+	font-size: 12pt;
+	height: 25px;
+}
+
+#signin_form p {
+	background: rgba(248, 248, 248, 0.8);
+	margin: 2px 2px 2px 42px;
+	padding: 10px 0px 10px 55px;
+	border: 1px solid white;
+	box-shadow: 0 0 10px rgb(150, 150, 150);
+}
+
+/* ========= personal page ========= */
+
+#personal_page {
+	width: 85%;
+	max-width: 90%;
+	min-height: 500px;
+	margin: 120px auto;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 5px #ccc;
+	border: 1px solid #ccc;
+	color: rgb(68, 68, 68);
+
+	padding: 20px;
+}
+
+#personal_page h1 {
+	font-weight: normal;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+#personal_page hr{
+	background-color: rgb(68, 68, 68);
+}
+
+#personal_page img#avatar{
+	background: url("/images/avatar_back.jpg");
+	padding: 10px;
+	margin: 0px 40px 20px 20px;
+}
+
+#personal_page div#user_content{
+	display: inline-block; 
+	width: 50%;
+	min-height: 300px;
+}
+
+#personal_page h2 {
+	font-weight: normal;
+}
+
+#personal_page p>span {
+	font-size: 0.9rem;
+}
+
+#personal_page #user_content p {
+	font-size: 1.1rem;
+}
+
+#personal_page h2 {
+	font-weight: normal;
+	text-align: center;
+}
+
+button.comment_button{
+	width: 400px;
+	height: 30px;
+}
+
+table#users_table{
+	width: auto;
+	height: 200px;
+	border: 1px solid #aaa;
+	overflow-y: scroll;
+	margin: 50px auto;
+}
+
+table#comments_table{
+	width: 780px;
+	height: 200px;
+	border: 1px solid #aaa;
+	overflow-y: scroll;
+	margin: 50px auto;
+}
+
+table#comments_table form button.comment_button{
+	width: 70px;
+	height: 50px;
+	padding: 5px;
+	margin: auto;
+	border: 1px solid #aaa;
+	background-color: #fff;
+}
+
+table#users_table form button{
+	width: 120px;
+	height: 30px;
+	padding: 1px;
+	margin: auto;
+	border: 1px solid #aaa;
+	background-color: #fff;
+}
+
+table#comments_table form button:hover{
+	box-shadow: 0 0 5px #aaa;
+}
+
+
+table#users_table form button:hover{
+	box-shadow: 0 0 5px #aaa;
+}
+
+table tr:nth-child(2n+1) {
+	background-color: rgb(245, 245, 245);
+}
+
+
+table tr:nth-child(1) {
+	background-color: #eee;
+}
+
+table#users_table tr td,th{
+	padding: 0px 18px;
+}
+
+table#comments_table>tr td,th{
+	padding: 5px 25px;
+}

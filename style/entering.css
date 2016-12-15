@@ -1,0 +1,32 @@
+body {
+	background-image: url("/images/entering_fone.jpg");
+	margin: auto;
+  	background-size: cover;
+  	font-family: "Century Gothic", serif;
+}
+
+a {
+	text-decoration: none;
+	color: #F5F5DC;
+}
+
+#content {
+	text-align: center;
+	color: #F5F5DC;
+	width: 100%;
+	margin: 200px 0px;
+}
+
+#button {
+	margin: auto;
+	margin-top: 20px;
+	padding: 12px;
+	width: 200px;
+	border-radius: 20px;
+	border: 2px solid #F5F5DC;
+}
+
+#button:hover {
+	background-color: rgba(68, 94, 143, 0.6);
+	cursor: pointer;
+}
