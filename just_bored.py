@@ -10,7 +10,9 @@ def change_words_in(from_this, to_this, path):
 	with open(path, "w") as html_code:							# записуєш змінений контент назад
 		html_code.write(result)
 
-path = "Z:\\home\\localhost\\www\\CourseWork\\index.html"
+# just for testing
+
+path = "Z:\\home\\localhost\\www\\CourseWork\\"
 
 mode = 1
 file_type = 'php'
