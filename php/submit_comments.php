@@ -78,7 +78,7 @@
 		fclose($file);
 	}
 
-	$all_comments = get_comments_from("z:/home/localhost/www/lab7/txt/user_comments.txt");
+	$all_comments = get_comments_from("z:/home/localhost/www/CourseWork/txt/user_comments.txt");
 
 
 
@@ -95,7 +95,7 @@
 	//print_r($for_deleting);
 	//print_r($for_merging);
 
-	$new_comments = remake_comments_in("z:/home/localhost/www/lab7/txt/user_comments.txt", $for_merging, $for_deleting);
+	$new_comments = remake_comments_in("z:/home/localhost/www/CourseWork/txt/user_comments.txt", $for_merging, $for_deleting);
 
 	/*
 	foreach ($new_comments as $key => $value) {
@@ -106,12 +106,12 @@
 	}
 	*/
 	
-	$file = fopen("z:/home/localhost/www/lab7/txt/user_comments.txt", "w");
+	$file = fopen("z:/home/localhost/www/CourseWork/txt/user_comments.txt", "w");
 	fwrite($file, "video_card+cpUnit+generations+memory_unit");
 	fclose($file);
 
 	foreach ($new_comments as $key => $value)
-		add_info_to_file("z:/home/localhost/www/lab7/txt/user_comments.txt", $value);
+		add_info_to_file("z:/home/localhost/www/CourseWork/txt/user_comments.txt", $value);
 
-	echo "<script type='text/javascript'> document.location = 'http://www.localhost/lab7/php/main.php?page=personal_page'; </script>";
+	echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=personal_page'; </script>";
 ?>

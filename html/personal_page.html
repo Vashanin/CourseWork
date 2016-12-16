@@ -81,7 +81,7 @@
 		}
 
 
-		$all_users = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");			
+		$all_users = get_user_info_from("z:/home/localhost/www/CourseWork/txt/users.txt");			
 		$user_info = $all_users[$_SESSION['current_user']];
 
 		echo '<div id="user_content">';
@@ -97,9 +97,9 @@
 
 		if($_SESSION['current_user'] == 'Admin'){
 
-			$all_comments = get_comments_from("z:/home/localhost/www/lab7/txt/user_comments.txt");
-			$all_users = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");			
-			$banned = get_banned_users("z:/home/localhost/www/lab7/txt/banned.txt");
+			$all_comments = get_comments_from("z:/home/localhost/www/CourseWork/txt/user_comments.txt");
+			$all_users = get_user_info_from("z:/home/localhost/www/CourseWork/txt/users.txt");			
+			$banned = get_banned_users("z:/home/localhost/www/CourseWork/txt/banned.txt");
 			$current_user = $_SESSION['current_user'];
 
 			echo '<h2 id="header"> List of users </h2>';
@@ -140,7 +140,7 @@
 				if($comment[4] === 'merged'){
 					echo '<tr>';
 					echo '<td>'.$comment[0].'</td><td>'.$comment[1].'</td><td>'.$comment[2].'</td><td>'.$comment[3].'</td>'; 
-					echo '<td> <form method="POST" action="/lab7/php/submit_comments.php">';
+					echo '<td> <form method="POST" action="/CourseWork/php/submit_comments.php">';
 					echo '<button class="comment_button" name="delete_'.$item.'" value="true"> Delete </button>';
 					echo '</form> </td></tr>';
 				}
@@ -158,7 +158,7 @@
 
 					echo '<td>'.$comment[0].'</td><td>'.$comment[1].'</td><td>'.$comment[2].'</td><td>'.$comment[3].'</td>';
 					
-					echo '<td> <form method="POST" action="/lab7/php/submit_comments.php">';
+					echo '<td> <form method="POST" action="/CourseWork/php/submit_comments.php">';
 					echo '<button class="comment_button" name="delete_'.$item.'" value="true"> Delete </button>';
 					echo '<button class="comment_button" name="merge_'.$item.'" value="true"> Merge </button>';
 					echo '</form> </td>';

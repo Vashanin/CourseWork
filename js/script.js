@@ -6,7 +6,7 @@ function add_comment_to(article, current_user){
 
 		newComment.classList.add('user_comment');
 
-		var content = '<form action="/lab7/php/comments.php" method="POST"> <span> You loggined as </span>';
+		var content = '<form action="/CourseWork/php/comments.php" method="POST"> <span> You loggined as </span>';
 		content += '<p>'  + current_user + '</p>';
 		content += '<hr><span> Leave a reply </span> <br> <textarea id = "_' + article + '" type="textarea" name="' + article + '"></textarea>';
 		content += '<input type="submit" value="Send!"></form>';

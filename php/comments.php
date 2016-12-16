@@ -1,7 +1,7 @@
 <?php
 	session_start(oid);
 
-	$page_with_info = "z:/home/localhost/www/lab7/txt/user_comments.txt";
+	$page_with_info = "z:/home/localhost/www/CourseWork/txt/user_comments.txt";
 
 	function get_headers_from($path_to_file){
 		$file_with_comments = fopen($path_to_file, 'r');
@@ -40,5 +40,5 @@
 	add_info_to_file($page_with_info, $content);
 	
 	echo "<script type='text/javascript'> alert('Your comment will be added after moderating.');</script>";
-	echo "<script type='text/javascript'> document.location = 'http://www.localhost/lab7/php/main.php?page=main'; </script>";
+	echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=main'; </script>";
 ?>

@@ -50,7 +50,7 @@
 		fclose($file);
 	}
 	
-	$database = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");
+	$database = get_user_info_from("z:/home/localhost/www/CourseWork/txt/users.txt");
 	
 	$user_info = array(count($database) + 1, $_POST['login'], $_POST['password1'], $_POST['first_name'], $_POST['second_name'], $_POST['day'], $_POST['gender'], $_POST['photo'], $_POST['phone'], $_POST['skype'], $_POST['viber']);
 
@@ -58,11 +58,11 @@
 	
 	if(isset($database[$user_login])){
 		$_SESSION['sign_up'] = 'canceled';
-		echo "<script type='text/javascript'> document.location = 'http://www.localhost/lab7/php/main.php?page=registration'; alert('You cant sing up. This email has been already used.'); </script>";
+		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=registration'; alert('You cant sing up. This email has been already used.'); </script>";
 	} else {
 		$_SESSION['sign_up'] = 'merged';
-		add_info_to_file("z:/home/localhost/www/lab7/txt/users.txt", $user_info);		
-		echo "<script type='text/javascript'> document.location = 'http://www.localhost/lab7/php/main.php?page=registration'; alert('Registration completed!'); </script>";
+		add_info_to_file("z:/home/localhost/www/CourseWork/txt/users.txt", $user_info);		
+		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=registration'; alert('Registration completed!'); </script>";
 	}
 
 	exit();

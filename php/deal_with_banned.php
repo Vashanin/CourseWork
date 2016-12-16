@@ -20,7 +20,7 @@
 		fclose($file_with_banned);
 	}
 
-	$banned = get_banned_users("z:/home/localhost/www/lab7/txt/banned.txt");
+	$banned = get_banned_users("z:/home/localhost/www/CourseWork/txt/banned.txt");
 	
 	if($_POST['ban'])
 		$banned[] = $_POST['ban']; 
@@ -30,7 +30,7 @@
 		unset($banned[array_search($_POST['unban'], $banned)]);
 
 	
-	set_banned_users("z:/home/localhost/www/lab7/txt/banned.txt", $banned);
+	set_banned_users("z:/home/localhost/www/CourseWork/txt/banned.txt", $banned);
 
-	echo "<script type='text/javascript'> document.location = 'http://www.localhost/lab7/php/main.php?page=personal_page'; </script>";
+	echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=personal_page'; </script>";
 ?>

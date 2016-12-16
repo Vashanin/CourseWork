@@ -50,12 +50,12 @@
 		return $banned;
 	}
 
-	$database = get_user_info_from("z:/home/localhost/www/lab7/txt/users.txt");
+	$database = get_user_info_from("z:/home/localhost/www/CourseWork/txt/users.txt");
 
 	$login = $_POST['login'];
 	$password = $_POST['password'];
 
-	$banned = get_banned_users("z:/home/localhost/www/lab7/txt/banned.txt");
+	$banned = get_banned_users("z:/home/localhost/www/CourseWork/txt/banned.txt");
 
 	if(isset($database[$login])){
 		$this_user_is_banned = false;

@@ -8,7 +8,7 @@ function get_info(){
 				
 	var xmlhttp = new XMLHttpRequest();
 
-	xmlhttp.open("POST","/lab7/php/log_in.php", false);
+	xmlhttp.open("POST","/CourseWork/php/log_in.php", false);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send("login=" + user_login + "&password=" + user_password);
 

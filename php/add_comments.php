@@ -1,6 +1,6 @@
 <?php
 	if($_GET['page'] === 'main'){
-		$document_with_comments = "z:/home/localhost/www/lab7/txt/user_comments.txt";
+		$document_with_comments = "z:/home/localhost/www/CourseWork/txt/user_comments.txt";
 		$file = fopen($document_with_comments, 'r');
 
 		if($file){
