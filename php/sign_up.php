@@ -58,11 +58,11 @@
 	
 	if(isset($database[$user_login])){
 		$_SESSION['sign_up'] = 'canceled';
-		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=registration'; alert('You cant sing up. This email has been already used.'); </script>";
+		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=sign_up'; alert('You cant sing up. This email has been already used.'); </script>";
 	} else {
 		$_SESSION['sign_up'] = 'merged';
 		add_info_to_file("z:/home/localhost/www/CourseWork/txt/users.txt", $user_info);		
-		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=registration'; alert('Registration completed!'); </script>";
+		echo "<script type='text/javascript'> document.location = 'http://www.localhost/CourseWork/php/main.php?page=sign_up'; alert('Registration completed!'); </script>";
 	}
 
 	exit();
