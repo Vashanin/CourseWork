@@ -13,7 +13,7 @@
 		<script src="/CourseWork/js/slide_menu.js" type="text/javascript"></script>
 		<script src="/CourseWork/js/script.js" type="text/javascript"></script>
 		<script src="/CourseWork/js/changing_page.js" type="text/javascript"></script>
-
+		
 		<script type="text/javascript">
 			function output_comment(article, user, comment){
 				var parent = document.getElementById(article);

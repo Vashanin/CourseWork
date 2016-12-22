@@ -12,12 +12,12 @@ def change_words_in(from_this, to_this, path):
 
 # just for testing
 
-path = "Z:\\home\\localhost\\www\\CourseWork\\js\\"
+path = "Z:\\home\\localhost\\www\\Timonov\\lab6\\php\\"
 
 mode = 0
 file_type = 'php'
-from_ = 'login.html'
-to_ = 'log_in.html'
+from_ = 'admn.php'
+to_ = '/admn.php'
 
 if (mode == 0):
 	os.chdir(path)
